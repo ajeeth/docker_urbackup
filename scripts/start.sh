@@ -34,4 +34,4 @@ else
 fi
 
 #vi test
-exec /usr/sbin/start_urbackup_server --no_daemon
+exec /usr/sbin/urbackupsrv run
