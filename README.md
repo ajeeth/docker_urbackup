@@ -4,7 +4,7 @@ This docker container provides urbackup server fronted by Nginx webserver on Ubu
 
 
 Run command:
-docker run --privileged -d --name urbackup --restart=always -p 443:443 -p 55415:55415 -p 35623:35623/udp -v /etc/localtime:/etc/localtime:ro -v /<path>/urbackup/certs:/opt/urbackup/certs -v /<path>/urbackup/log:/opt/urbackup/log -v /<path>/urbackup/BACKUP:/media/BACKUP -v /<path>/urbackup/var:/var/urbackup -e URBACKUP_DOMAIN_NAME=urbackup.domain.com ajeeth/urbackup:2.0.34
+docker run --privileged -d --name urbackup --restart=always -p 443:443 -p 55415:55415 -p 35623:35623/udp -v /etc/localtime:/etc/localtime:ro -v /<path>/urbackup/certs:/opt/urbackup/certs -v /<path>/urbackup/log:/opt/urbackup/log -v /<path>/urbackup/BACKUP:/media/BACKUP -v /<path>/urbackup/var:/var/urbackup -e URBACKUP_DOMAIN_NAME=urbackup.domain.com ajeeth/urbackup_auto:2.0.34
 
 Please setup the following directory structure on Host
 /<path>/urbackup/certs
