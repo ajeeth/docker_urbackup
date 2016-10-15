@@ -33,5 +33,8 @@ else
 	/root/scripts/normal_run.sh
 fi
 
-#vi test
-exec /usr/sbin/start_urbackup_server --no_daemon
+if [ -n "$RUNCMD" ] ; then
+	/usr/sbin/urbackupsrv "$RUNCMD";
+else
+	exec /usr/sbin/urbackupsrv run
+fi
