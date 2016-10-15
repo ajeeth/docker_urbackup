@@ -23,9 +23,9 @@ Add certificate and key named as domain.crt and domain.key to `/<path>/urbackup/
 `/<path>/urbackup/BACKUP` is location where that file and image backups are stored. This partition should be sized as per your backup requirements.
 
 ---
-### Running arbitary urbackupsrv commands
+### Running urbackupsrv commands
 
-Arbitary urbackupsrv commands can be run by passing the command argument to the variable `RUNCMD`.
+Urbackupsrv urbackupsrv commands can be run by passing the command argument to the variable `RUNCMD`.
 
 Following example passes `remove-unknown` to urbackupsrv. After execution, docker container exits and is removed.
 
