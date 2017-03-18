@@ -5,7 +5,7 @@ This docker container provides urbackup server fronted by Nginx webserver on Ubu
 
 To run the container execute:
 ```bash
-docker run --privileged -d --name urbackup --restart=always -p 443:443 -p 55415:55415 -p 35623:35623/udp -v /etc/localtime:/etc/localtime:ro -v /<path>/urbackup/certs:/opt/urbackup/certs -v /<path>/urbackup/log:/opt/urbackup/log -v /<path>/urbackup/BACKUP:/media/BACKUP -v /<path>/urbackup/var:/var/urbackup -e URBACKUP_DOMAIN_NAME=<urbackup.domain.com> ajeeth/urbackup_auto:2.0.36
+docker run --privileged -d --name urbackup --restart=always -p 443:443 -p 55415:55415 -p 35623:35623/udp -v /etc/localtime:/etc/localtime:ro -v /<path>/urbackup/certs:/opt/urbackup/certs -v /<path>/urbackup/log:/opt/urbackup/log -v /<path>/urbackup/BACKUP:/media/BACKUP -v /<path>/urbackup/var:/var/urbackup -e URBACKUP_DOMAIN_NAME=<urbackup.domain.com> ajeeth/urbackup_auto:2.1.18
 ```
 
 Setup the following directory structure on Host before running the above command.
@@ -25,12 +25,12 @@ Add certificate and key named as domain.crt and domain.key to `/<path>/urbackup/
 ---
 ### Running arbitary urbackupsrv commands
 
-Arbitart commands can be run by passing the command argument to the variable `RUNCMD`.
+Arbitary commands can be run by passing the command argument to the variable `RUNCMD`.
 
 Following example passes `remove-unknown` to urbackupsrv. After execution, docker container exits and is removed.
 
 ```bash
-docker run --privileged --rm --name urbackup2 -v /etc/localtime:/etc/localtime:ro -v /<path>/urbackup/log:/opt/urbackup/log -v /<path>/urbackup/BACKUP:/media/BACKUP -v /<path>/urbackup/var:/var/urbackup -e URBACKUP_DOMAIN_NAME=<urbackup.domain.com> -e RUNCMD=remove-unknown ajeeth/urbackup_auto:2.0.36
+docker run --privileged --rm --name urbackup2 -v /etc/localtime:/etc/localtime:ro -v /<path>/urbackup/log:/opt/urbackup/log -v /<path>/urbackup/BACKUP:/media/BACKUP -v /<path>/urbackup/var:/var/urbackup -e URBACKUP_DOMAIN_NAME=<urbackup.domain.com> -e RUNCMD=remove-unknown ajeeth/urbackup_auto:2.1.18
 ```
 
 

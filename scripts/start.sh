@@ -25,16 +25,17 @@ if [ "$USEEXTVOL" = true ] ; then
 	echo "NFS Mounts: " `mount|grep nfs` 
 fi
 
-if [[ -e /first_run ]]; then
-	/root/scripts/first_run.sh
-	echo firstrun
-else
-	echo not first run
-	/root/scripts/normal_run.sh
-fi
-
 if [ -n "$RUNCMD" ] ; then
+	RUNCMD=${RUNCMD=//\"/}
 	/usr/sbin/urbackupsrv "$RUNCMD";
+	rm -f /root/scripts/first_run.sh	
 else
+	if [[ -e /first_run ]]; then
+		/root/scripts/first_run.sh
+		echo firstrun
+	else
+		echo not first run
+		/root/scripts/normal_run.sh
+	fi
 	exec /usr/sbin/urbackupsrv run
 fi
