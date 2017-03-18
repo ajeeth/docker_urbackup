@@ -27,7 +27,7 @@ fi
 
 if [ -n "$RUNCMD" ] ; then
 	RUNCMD=${RUNCMD=//\"/}
-	/usr/sbin/urbackupsrv "$RUNCMD";
+	/usr/bin/urbackupsrv "$RUNCMD";
 	rm -f /root/scripts/first_run.sh	
 else
 	if [[ -e /first_run ]]; then
@@ -37,5 +37,5 @@ else
 		echo not first run
 		/root/scripts/normal_run.sh
 	fi
-	exec /usr/sbin/urbackupsrv run
+	exec /usr/bin/urbackupsrv run
 fi
