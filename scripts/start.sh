@@ -26,7 +26,9 @@ if [ "$USEEXTVOL" = true ] ; then
 fi
 
 if [ -n "$RUNCMD" ] ; then
+	echo $RUNCMD
 	RUNCMD=${RUNCMD=//\"/}
+	echo $RUNCMD
 	/usr/bin/urbackupsrv "$RUNCMD";
 	rm -f /root/scripts/first_run.sh	
 else
