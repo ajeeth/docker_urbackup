@@ -34,7 +34,7 @@ else
 fi
 
 if [ -n "$RUNCMD" ] ; then
-	/usr/sbin/urbackupsrv "$RUNCMD";
+	/usr/bin/urbackupsrv "$RUNCMD";
 else
-	exec /usr/sbin/urbackupsrv run
+	exec /usr/bin/urbackupsrv run
 fi
