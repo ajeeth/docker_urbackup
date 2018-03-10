@@ -10,7 +10,7 @@ usermod -g 100 nobody && \
 add-apt-repository ppa:uroni/urbackup && \
 apt-get update -q && \
 apt-get upgrade -y openssl && \
-apt-get install -y nginx ca-certificates socat wget unzip nfs-common iputils-ping net-tools inotify-tools && \
+apt-get install -y nginx ca-certificates socat wget unzip nfs-common libcurl4-openssl-dev iputils-ping net-tools inotify-tools && \
 apt-get download -y urbackup-server
 
 # Nginx configurations
