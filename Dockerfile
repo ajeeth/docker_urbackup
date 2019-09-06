@@ -31,8 +31,7 @@ VOLUME /opt/urbackup/certs
 VOLUME /opt/urbackup/log
 #VOLUME /media/BACKUP
 VOLUME /var/urbackup
-EXPOSE 443 55415
-EXPOSE 35623/udp
+EXPOSE 443/tcp 55413/tcp 55414/tcp 55415/tcp 35623/udp
 
 RUN apt-get autoremove -y
 
