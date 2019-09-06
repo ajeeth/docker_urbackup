@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.19
+FROM phusion/baseimage:latest-amd64
 MAINTAINER ajeeth.samuel@gmail.com
 
 # Initialize Ubuntu
@@ -7,11 +7,11 @@ RUN usermod -u 99 nobody && \
 usermod -g 100 nobody && \
 
 # add repo, update apt and install build dependencies
-add-apt-repository ppa:uroni/urbackup && \
+add-apt-repository -y ppa:uroni/urbackup && \
 apt-get update -q && \
 apt-get upgrade -y openssl && \
-apt-get install -y nginx ca-certificates socat wget unzip nfs-common libcurl4-openssl-dev iputils-ping net-tools inotify-tools && \
-apt-get download -y urbackup-server
+apt-get install -y nginx ca-certificates socat wget unzip nfs-common libcurl4-openssl-dev iputils-ping net-tools inotify-tools
+#apt-get download -y urbackup-server
 
 # Nginx configurations
 RUN mkdir /etc/service/nginx
