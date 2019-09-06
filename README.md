@@ -5,7 +5,7 @@ This docker container provides urbackup server fronted by Nginx webserver on Ubu
 
 To run the container execute:
 ```bash
-docker run --privileged -d --name urbackup --restart=always -p 443:443 -p 55415:55415 -p 35623:35623/udp -v /etc/localtime:/etc/localtime:ro -v /<path>/urbackup/certs:/opt/urbackup/certs -v /<path>/urbackup/log:/opt/urbackup/log -v /<path>/urbackup/BACKUP:/media/BACKUP -v /<path>/urbackup/var:/var/urbackup -e URBACKUP_DOMAIN_NAME=<urbackup.domain.com> ajeeth/urbackup_auto:<version>
+docker run --privileged -d --name urbackup --restart=always -p 443:443 -p 55413-55415:55413-55415 -p 35623:35623/udp -v /etc/localtime:/etc/localtime:ro -v /<path>/urbackup/certs:/opt/urbackup/certs -v /<path>/urbackup/log:/opt/urbackup/log -v /<path>/urbackup/BACKUP:/media/BACKUP -v /<path>/urbackup/var:/var/urbackup -e URBACKUP_DOMAIN_NAME=<urbackup.domain.com> ajeeth/urbackup_auto:<version>
 ```
 
 Setup the following directory structure on Host before running the above command.
