@@ -4,10 +4,10 @@ MAINTAINER ajeeth.samuel@gmail.com
 # Initialize Ubuntu
 ENV DEBIAN_FRONTEND=noninteractive HOME="/root" TERM=xterm
 RUN usermod -u 99 nobody && \
-usermod -g 100 nobody && \
+usermod -g 100 nobody 
 
 # add repo, update apt and install build dependencies
-add-apt-repository -y ppa:uroni/urbackup && \
+RUN add-apt-repository -y ppa:uroni/urbackup && \
 apt-get update -q && \
 apt-get upgrade -y openssl && \
 apt-get install -y nginx ca-certificates socat wget unzip nfs-common libcurl4-openssl-dev iputils-ping net-tools inotify-tools
